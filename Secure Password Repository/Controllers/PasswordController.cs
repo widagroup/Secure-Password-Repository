@@ -206,7 +206,7 @@ namespace Secure_Password_Repository.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddCategory(CategoryAdd model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
 
             //user does not have access to add passwords
@@ -267,7 +267,7 @@ namespace Secure_Password_Repository.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EditCategory(CategoryEdit model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
 
             //user does not have access to edit category
